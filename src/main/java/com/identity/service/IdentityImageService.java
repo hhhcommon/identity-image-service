@@ -34,7 +34,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Component
 public class IdentityImageService {
 	private static Logger logger = LoggerFactory.getLogger(IdentityImageService.class);
-	private static String url = "https://v2-auth-api.visioncloudapi.com/identity/image_verification";
+	private static String url = "https://v2-auth-api.visioncloudapi.com/identity/liveness_image_verification";
     private static String api_key = "b1905ccfb1f5461699f73400729a04c3";
     private static String api_secret = "59a7945147d342fb916ca855afffa72e";
 	
