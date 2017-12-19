@@ -27,5 +27,9 @@ public class IdentityImageController {
 							@RequestParam("image_id") 		String image_id) {
 		return identityImageService.verifyImage(liveness_id, image_id);
 	}
-	
+
+    @RequestMapping("/")
+    String home() {
+        return "hello";
+    }
 }
