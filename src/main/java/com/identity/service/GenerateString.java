@@ -7,11 +7,16 @@ import java.security.SignatureException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Formatter;
+
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+
 import org.apache.commons.lang.RandomStringUtils;
 
 public class GenerateString {
+    private static String api_key = "3bdae14abef740798dfbcc4f56dc80bd";
+    private static String api_secret = "6fd574d3d2774f4db9177d7eb55bc873";
+	
     private static final String HASH_ALGORITHM = "HmacSHA256";
     static String timestamp = Long.toString(System.currentTimeMillis());
     static String nonce = RandomStringUtils.randomAlphanumeric(16);
@@ -66,5 +71,13 @@ public class GenerateString {
                      +",signature=" + EncryptedString;
         System.out.println(HeaderParam);
         return HeaderParam;
+    }
+    
+    public static String getSignStr() {
+    	try {
+			return GenerateString.genHeaderParam(api_key, api_secret);
+		} catch (Exception e) {
+			return null;
+		}
     }
 }
